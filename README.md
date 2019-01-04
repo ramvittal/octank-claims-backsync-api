@@ -1,6 +1,8 @@
-# Project Title
+# Octank Claims BackSync & Web Apis
 
-One Paragraph of project description goes here
+This Java project was built as a prototype for integration claims status feedback from AWS to on-premise Oracle claims database.  
+Furthermore, this project hosts web api proxy lambdas for managing oracle claims data.  
+This project uses AWS SAM, AWS Lamdba and Hibernate.
 
 ## Getting Started
 
@@ -8,22 +10,35 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+1. Execute environment setup instructions mentioned here - https://github.com/ramvittal/octank-claims-master/blob/master/README.md  
+2. Checkout this project  
+3. Update hibernate.cfg.xml with oracle ec2 private ip 
+4. Update webapi.yaml security group id, subnet ids, oracle db creds
 
-```
-Give examples
-```
 
 ### Installing
 
-Run the folowing commands from your project root after creating your own s3 bucket.  
+Run the folowing commands from your project root  
 
 Build the project using maven
 ```
 mvn package  
 ```
 
-Package and deploy web apis
+
+
+
+## Running the tests
+
+ 
+
+
+
+
+## Deployment
+
+
+Package and deploy web apis. Create your own s3 bucket.
 
 ```
 aws cloudformation package --template-file webapi.yaml --output-template-file output-webapi.yaml --s3-bucket octank-healthcare  
@@ -36,22 +51,6 @@ Package and deploy backsync lambda
 aws cloudformation package --template-file backsync.yaml --output-template-file output-backsync.yaml --s3-bucket octank-healthcare  
 aws cloudformation deploy --template-file output-backsync.yaml --stack-name OctankClaimsBackSync  
 ```
-
-
-
-## Running the tests
-
- 
-
-### Break down into end to end tests
-
-
-
-### And coding style tests
-
-
-
-## Deployment
 
 ## Contributing
 
