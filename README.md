@@ -1,6 +1,6 @@
 # Octank Claims BackSync & Web Apis
 
-This Java project was built as a prototype for integration claims status feedback from AWS to on-premise Oracle claims database.
+This Java project was built as a prototype for integrating claims status feedback from AWS to on-premise Oracle claims database.
 Furthermore, this project hosts web api proxy lambdas for managing oracle claims data.
 This project uses AWS SAM, AWS Lambda and Hibernate.
 
